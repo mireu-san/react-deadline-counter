@@ -1,20 +1,24 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
+  // This state variable will hold the starting date:
   const [start, setStart] = useState(null);
+  // This state variable will hold the ending date:
   const [end, setEnd] = useState(null);
+  // This state variable will hold the difference between the starting and ending date:
   const [final, setFinal] = useState(null);
 
+  // Update starting date on input change event:
   function handleStartChange(e) {
     setStart(new Date(e.target.value).getTime());
   }
-
+  // Update ending date on input change event:
   function handleEndChange(e) {
     setEnd(new Date(e.target.value).getTime());
   }
-
   useEffect(
     function runWhenStartOrEndChange() {
+      // Calculate difference only if both starting and ending dates are present and not null
       if (end && start) {
         const diffTime =
           (new Date(end).getTime() - new Date(start).getTime()) / 1000 / 60;
@@ -27,7 +31,6 @@ export default function App() {
   return (
     <>
       <label htmlFor="due">Set your time to compare it</label>
-      <p />
       Start:
       <input
         onChange={handleStartChange}
@@ -35,7 +38,6 @@ export default function App() {
         type="datetime-local"
         name="duedate"
       />
-      <p />
       End:
       <input
         onChange={handleEndChange}
@@ -43,9 +45,7 @@ export default function App() {
         type="datetime-local"
         name="duedate"
       />
-      <p />
       <label htmlFor="due">Time you spent</label>
-      <p />
       <div>{final} minutes</div>
     </>
   );

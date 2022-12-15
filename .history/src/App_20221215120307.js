@@ -27,7 +27,7 @@ export default function App() {
   return (
     <>
       <label htmlFor="due">Set your time to compare it</label>
-      <p />
+      <fr />
       Start:
       <input
         onChange={handleStartChange}
@@ -35,7 +35,6 @@ export default function App() {
         type="datetime-local"
         name="duedate"
       />
-      <p />
       End:
       <input
         onChange={handleEndChange}
@@ -43,9 +42,7 @@ export default function App() {
         type="datetime-local"
         name="duedate"
       />
-      <p />
       <label htmlFor="due">Time you spent</label>
-      <p />
       <div>{final} minutes</div>
     </>
   );

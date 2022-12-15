@@ -43,9 +43,7 @@ export default function App() {
         type="datetime-local"
         name="duedate"
       />
-      <p />
       <label htmlFor="due">Time you spent</label>
-      <p />
       <div>{final} minutes</div>
     </>
   );

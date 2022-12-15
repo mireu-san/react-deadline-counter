@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
   const [start, setStart] = useState(null);
@@ -26,27 +26,8 @@ export default function App() {
 
   return (
     <>
-      <label htmlFor="due">Set your time to compare it</label>
-      <p />
-      Start:
-      <input
-        onChange={handleStartChange}
-        id="due"
-        type="datetime-local"
-        name="duedate"
-      />
-      <p />
-      End:
-      <input
-        onChange={handleEndChange}
-        id="due"
-        type="datetime-local"
-        name="duedate"
-      />
-      <p />
-      <label htmlFor="due">Time you spent</label>
-      <p />
-      <div>{final} minutes</div>
+      Input or set your time to compare it Start: End: Time you spent
+      {final} minutes
     </>
   );
 }
